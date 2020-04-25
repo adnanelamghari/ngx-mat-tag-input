@@ -3,14 +3,14 @@
 
 
   <div class="tag-demo">
-    <label>With Auto-complete</label>
+    <label>With Auto-complete : {{autoCompleteTags | json}}</label>
     <ngx-mat-tag-input #a (change)="change($event)"
                        [items]="autoCompleteTags" appearance="outline"
                        placeholder="Search Javascript framework"></ngx-mat-tag-input>
   </div>
   <hr>
   <div class="tag-demo">
-    <label>With Auto-complete Objects</label>
+    <label>With Auto-complete Objects : {{autoCompleteTagsObjects | json}}</label>
     <ngx-mat-tag-input #b (change)="change1($event)" [items]="autoCompleteTagsObjects"
                        appearance="outline" displayBy="name"
                        placeholder="Search Javascript framework"></ngx-mat-tag-input>
