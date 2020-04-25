@@ -1,0 +1,33 @@
+
+.container {
+  background-color: #F5F9FF;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  .tag-demo {
+    min-height: 200px;
+    width: 80%;
+  }
+
+  ::ng-deep {
+    mat-chip-list {
+      z-index: 10;
+
+      mat-chip {
+        background: #1976D2;
+        color: white;
+      }
+    }
+  }
+
+  .tags-container {
+    width: 90%;
+
+
+  }
+}

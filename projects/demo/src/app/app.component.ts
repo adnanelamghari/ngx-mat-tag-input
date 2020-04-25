@@ -6,5 +6,18 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'demo';
+  public autoCompleteTags = ['Angular', 'React', 'VueJs'];
+  public autoCompleteTagsObjects = [{name: 'Angular', id: 0}, {name: 'React', id: 1}, {name: 'VueJs', id: 2}];
+
+  change($event) {
+    console.log($event)
+  }
+
+  change1($event) {
+    console.log($event)
+  }
+
+  change2($event) {
+    console.log($event)
+  }
 }

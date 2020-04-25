@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 
 @Component({
-  selector: 'lib-ngx-mat-tag-input',
+  selector: 'ngx-mat-tag-input',
   templateUrl: './ngx-mat-tag-input.component.html',
   styleUrls: ['./ngx-mat-tag-input.component.scss'],
   providers: [
@@ -31,6 +31,7 @@ export class NgxMatTagInputComponent implements OnInit, ControlValueAccessor {
   @Input() selectedTags: any[] = [];
 
   @Output() reset = new EventEmitter();
+  @Output() ngModelChange = new EventEmitter();
   @Output() change = new EventEmitter();
   @Output() select = new EventEmitter();
   @Output() focus = new EventEmitter();
@@ -92,6 +93,10 @@ export class NgxMatTagInputComponent implements OnInit, ControlValueAccessor {
     this.searchControl.disable();
   }
 
+  _modelChange(event): void {
+    this.ngModelChange.emit(event)
+  }
+
   _change(event): void {
     this.change.emit(event);
   }
@@ -121,7 +126,6 @@ export class NgxMatTagInputComponent implements OnInit, ControlValueAccessor {
     this.pushTag(event.option.value);
     this.tagsInput.nativeElement.value = '';
     this.searchControl.setValue(null);
-    this._change(this.selectedTags);
   }
 
   clear(): void {
