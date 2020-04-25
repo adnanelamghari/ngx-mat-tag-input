@@ -7,15 +7,44 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build_lib": "ng build ngx-mat-markdown-text-editor --prod",
+    "copy-license": "copy .\\LICENSE .\\dist\\ngx-mat-markdown-text-editor",
+    "copy-readme": "copy .\\README.md .\\dist\\ngx-mat-markdown-text-editor",
+    "copy-files": "npm run copy-license && npm run copy-readme",
+    "npm_pack": "cd dist/ngx-mat-markdown-text-editor && npm pack",
+    "package": "npm run build_lib && npm run copy-files && npm run npm_pack"
   },
-  "private": true,
+  "private": false,
+  "description": "Angular tags-input based on Material Angular",
+  "author": "Adnane Lamghari",
+  "repository": {
+    "url": "https://github.com/adnanelamghari/ngx-mat-tag-input",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/adnanelamghari/ngx-mat-tag-input/issues"
+  },
+  "homepage": "https://github.com/adnanelamghari/ngx-mat-tag-input",
+  "keywords": [
+    "angular",
+    "angular-material",
+    "tags",
+    "tags-input",
+    "tag-input",
+    "input",
+    "material-design",
+    "material-ui"
+  ],
+  "license": "MIT",
   "dependencies": {
     "@angular/animations": "~9.1.1",
+    "@angular/cdk": "^9.2.1",
     "@angular/common": "~9.1.1",
     "@angular/compiler": "~9.1.1",
     "@angular/core": "~9.1.1",
     "@angular/forms": "~9.1.1",
+    "@angular/material": "^9.2.1",
     "@angular/platform-browser": "~9.1.1",
     "@angular/platform-browser-dynamic": "~9.1.1",
     "@angular/router": "~9.1.1",

@@ -1,9 +1,33 @@
 {
   "name": "ngx-mat-tag-input",
   "version": "0.0.1",
+  "description": "Angular tags-input based on Material Angular",
+  "author": "Adnane Lamghari",
+  "repository": {
+    "url": "https://github.com/adnanelamghari/ngx-mat-tag-input",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/adnanelamghari/ngx-mat-tag-input/issues"
+  },
+  "homepage": "https://github.com/adnanelamghari/ngx-mat-tag-input",
+  "keywords": [
+    "angular",
+    "angular-material",
+    "tags",
+    "tags-input",
+    "tag-input",
+    "input",
+    "material-design",
+    "material-ui"
+  ],
+  "license": "MIT",
   "peerDependencies": {
+    "@angular/cdk": "^9.2.1",
     "@angular/common": "^9.1.1",
     "@angular/core": "^9.1.1",
+    "@angular/forms": "~9.1.1",
+    "@angular/material": "^9.2.1",
     "tslib": "^1.10.0"
   }
 }

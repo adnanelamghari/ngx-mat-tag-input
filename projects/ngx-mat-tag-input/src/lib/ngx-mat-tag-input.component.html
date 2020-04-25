@@ -1,0 +1,25 @@
+<mat-form-field [appearance]="appearance" class="mat-tag-input-container">
+  <mat-chip-list #chipList>
+    <mat-chip (removed)="remove(item)" *ngFor="let item of selectedTags" [removable]="true" [selectable]="true">
+      {{displayBy ? item[displayBy] : item}}
+      <mat-icon matChipRemove>cancel</mat-icon>
+    </mat-chip>
+    <input #tagsInput
+           (matChipInputTokenEnd)="add($event)" (ngModelChange)="_change($event)"
+           [formControl]="searchControl" [matAutocomplete]="auto" [matChipInputFor]="chipList"
+           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+           [placeholder]="placeholder">
+  </mat-chip-list>
+  <button (click)="clear()" *ngIf="selectedTags.length !== 0" mat-button mat-icon-button
+          matSuffix>
+    <mat-icon>close</mat-icon>
+  </button>
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+    <mat-option *ngIf="isLoading" class="centered">
+      <mat-spinner diameter="40"></mat-spinner>
+    </mat-option>
+    <mat-option *ngFor="let item of filteredItems | async" [value]="item">
+      {{displayBy ? item[displayBy] : item}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
