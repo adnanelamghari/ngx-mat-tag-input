@@ -5,7 +5,7 @@
       <mat-icon matChipRemove>cancel</mat-icon>
     </mat-chip>
     <input #tagsInput
-           (matChipInputTokenEnd)="add($event)" (ngModelChange)="_modelChange($event)"
+           (focus)="_focus($event)" (matChipInputTokenEnd)="add($event)" (ngModelChange)="_modelChange($event)"
            [formControl]="searchControl" [matAutocomplete]="auto" [matChipInputFor]="chipList"
            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
            [placeholder]="placeholder">

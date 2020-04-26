@@ -33,8 +33,8 @@ export class NgxMatTagInputComponent implements OnInit, ControlValueAccessor {
   @Output() reset = new EventEmitter();
   @Output() ngModelChange = new EventEmitter();
   @Output() change = new EventEmitter();
-  @Output() select = new EventEmitter();
   @Output() focus = new EventEmitter();
+  @Output() select = new EventEmitter();
   @Output() touched = new EventEmitter();
 
   @ViewChild('tagsInput') tagsInput: ElementRef<HTMLInputElement>;
@@ -101,6 +101,10 @@ export class NgxMatTagInputComponent implements OnInit, ControlValueAccessor {
     this.change.emit(event);
   }
 
+  _focus(event): void {
+    this.focus.emit(event)
+  }
+
   add(event: MatChipInputEvent): void {
     const input = event.input;
     const value = event.value;
@@ -126,6 +130,7 @@ export class NgxMatTagInputComponent implements OnInit, ControlValueAccessor {
     this.pushTag(event.option.value);
     this.tagsInput.nativeElement.value = '';
     this.searchControl.setValue(null);
+    this.select.emit(event.option.value);
   }
 
   clear(): void {
