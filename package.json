@@ -1,6 +1,6 @@
 {
-  "name": "ngx-mat-tag-input-library",
-  "version": "0.0.0",
+  "name": "ngx-mat-tag-input",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
