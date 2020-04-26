@@ -7,6 +7,15 @@
     <ngx-mat-tag-input #a (change)="change($event)"
                        [items]="autoCompleteTags" appearance="outline"
                        placeholder="Search Javascript framework"></ngx-mat-tag-input>
+    <div>Value: {{a.value | json}}</div>
+  </div>
+  <hr>
+  <div class="tag-demo">
+    <label>With Auto-complete && selected tag: {{autoCompleteTags | json}}</label>
+    <ngx-mat-tag-input #aa (change)="change($event)"
+                       [items]="autoCompleteTags" [selectedTags]="selectedValues" appearance="outline"
+                       placeholder="Search Javascript framework"></ngx-mat-tag-input>
+    <div>Value: {{aa.value | json}}</div>
   </div>
   <hr>
   <div class="tag-demo">
@@ -14,12 +23,14 @@
     <ngx-mat-tag-input #b (change)="change1($event)" [items]="autoCompleteTagsObjects"
                        appearance="outline" displayBy="name"
                        placeholder="Search Javascript framework"></ngx-mat-tag-input>
+    <div>Value: {{b.value | json}}</div>
   </div>
   <hr>
   <div class="tag-demo">
     <label>Without Auto-complete</label>
     <ngx-mat-tag-input #c (change)="change1($event)" appearance="outline" placeholder="Add a new tag">
     </ngx-mat-tag-input>
+    <div>Value: {{c.value | json}}</div>
   </div>
 
 </div>

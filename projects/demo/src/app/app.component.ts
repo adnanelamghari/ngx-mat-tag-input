@@ -8,6 +8,7 @@ import {Component} from '@angular/core';
 export class AppComponent {
   public autoCompleteTags = ['Angular', 'React', 'VueJs', 'Meteor', 'Ember.js', 'Aurelia', 'Backbone.js'];
   public autoCompleteTagsObjects = [{name: 'Angular', id: 0}, {name: 'React', id: 1}, {name: 'VueJs', id: 2}];
+  public selectedValues = ['Angular'];
 
   change($event) {
     console.log($event)
