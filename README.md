@@ -1,3 +1,9 @@
+<p align="center">
+    <img src="https://github.com/maartentibau/angular-logos/blob/master/logos/angular-extensions.svg" alt="Image" width="150" />
+  <img src="https://github.com/maartentibau/angular-logos/blob/master/logos/angular-material.svg" alt="Image" width="150"/>
+</p>
+
+
 # NgxMatTagInput
 Angular tags input based on [Angular Material](https://material.angular.io) auto-complete and chips.
 
